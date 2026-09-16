@@ -1,16 +1,25 @@
 <?xml version="1.0"?>
+
 <!--
 /**
- * ScandiPWA_DirectoryGraphQl
- *
  * @category    ScandiPWA
- * @package     ScandiPWA_DirectoryGraphQL
- * @author      Aleksandrs Kondratjevs <info@scandiweb.com>
- * @copyright   Copyright (c) 2021 Scandiweb, Ltd (https://scandiweb.com)
+ * @package     ScandiPWA_DirectoryGraphQl
+ * @copyright   Copyright © 2021 Scandiweb, Ltd (https://scandiweb.com)
+ * @copyright   Modifications © Selveq. All rights reserved.
+ * @license     OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ * See LICENSE for license details.
  */
 -->
 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\DirectoryGraphQl\Model\Resolver\Countries"
-                type="ScandiPWA\DirectoryGraphQl\Model\Resolver\Countries"/>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Store\Model\Config\Cache\Tag\Strategy\CompositeTagGenerator">
+        <arguments>
+            <argument name="tagGenerators" xsi:type="array">
+                <item name="state_required_tag_generator" xsi:type="object">
+                    ScandiPWA\DirectoryGraphQl\Model\Cache\Tag\Strategy\StateRequiredTagGenerator
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>

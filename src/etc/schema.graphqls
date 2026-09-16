@@ -1,25 +1,15 @@
-# ScandiPWA - Progressive Web App for Magento
+##
+# ScandiPWA_DirectoryGraphQl
 #
-# Copyright © Scandiweb, Inc. All rights reserved.
+# @category    ScandiPWA
+# @package     ScandiPWA_DirectoryGraphQl
+# @copyright   Copyright 2019 Adobe. All Rights Reserved.
+# @copyright   Copyright © Scandiweb, Inc. All rights reserved.
+# @copyright   Modifications © Selveq. All rights reserved.
+# @license     OSL-3.0 (Open Software License ("OSL") v. 3.0)
 # See LICENSE for license details.
-#
-# @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
-# @package scandipwa/directory-graphql
-# @link https://github.com/scandipwa/directory-graphql
-#
-# Copyright © Magento, Inc. All rights reserved.
-# See COPYING.txt for license details.
-
-type Query {
-   countries: [Country] @resolver(class: "ScandiPWA\\DirectoryGraphQl\\Model\\Resolver\\Countries") @doc(description: "The countries query provides information for all countries.") @cache(cacheable: false)
-}
+##
 
 type Country {
-    id: String
-    two_letter_abbreviation: String
-    three_letter_abbreviation: String
-    full_name_locale: String
-    full_name_english: String
-    available_regions: [Region]
-    is_state_required: Boolean
+    is_state_required: Boolean @resolver(class: "ScandiPWA\\DirectoryGraphQl\\Model\\Resolver\\Country\\IsStateRequired") @doc(description: "Whether the country requires a region")
 }

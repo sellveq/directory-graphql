@@ -1,22 +1,50 @@
 {
-    "name": "scandipwa/directory-graphql",
-    "description": "Magneto 2 Directory related functionality extension",
+    "name": "selveq/directory-graphql",
+    "description": "Magento 2 Directory GraphQl extension for ScandiPWA theme",
     "type": "magento2-module",
-    "require": {
-        "magento/module-directory": "100.4.*",
-        "magento/module-store": "101.1.*",
-        "magento/module-graph-ql": "100.4.*",
-        "magento/framework": "103.0.*"
-    },
+    "version": "2.0.0",
     "license": [
         "OSL-3.0"
     ],
+    "authors": [
+        {
+            "name": "Scandiweb",
+            "homepage": "https://scandiweb.com",
+            "role": "Original author"
+        },
+        {
+            "name": "Selveq",
+            "homepage": "https://selveq.com",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/selveq/directory-graphql/issues",
+        "source": "https://github.com/selveq/directory-graphql"
+    },
+    "require": {
+        "php": "^8.3",
+        "magento/module-directory": "^100.4",
+        "magento/module-directory-graph-ql": "^100.4",
+        "magento/module-store": "^101.1",
+        "magento/module-graph-ql": "^100.4",
+        "magento/framework": "^103.0"
+    },
+    "replace": {
+        "scandipwa/directory-graphql": "*"
+    },
     "autoload": {
         "files": [
             "src/registration.php"
         ],
         "psr-4": {
-            "ScandiPWA\\DirectoryGraphQl\\": "src"
+            "ScandiPWA\\DirectoryGraphQl\\": "src/"
         }
+    },
+    "archive": {
+        "exclude": [
+            "/.github",
+            "/.gitignore"
+        ]
     }
 }

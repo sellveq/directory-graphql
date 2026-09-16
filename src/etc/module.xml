@@ -1,20 +1,24 @@
 <?xml version="1.0"?>
+
 <!--
 /**
- * ScandiPWA_DirectoryGraphQl
- *
  * @category    ScandiPWA
- * @package     ScandiPWA_DirectoryGraphQL
- * @author      Aleksandrs Kondratjevs <info@scandiweb.com>
- * @copyright   Copyright (c) 2021 Scandiweb, Ltd (https://scandiweb.com)
+ * @package     ScandiPWA_DirectoryGraphQl
+ * @copyright   Copyright © 2021 Scandiweb, Ltd (https://scandiweb.com)
+ * @copyright   Modifications © Selveq. All rights reserved.
+ * @license     OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ * See LICENSE for license details.
  */
 -->
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="ScandiPWA_DirectoryGraphQl" setup_version="1.0.0">
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="ScandiPWA_DirectoryGraphQl">
         <sequence>
-            <module name="Magento_DirectoryGraphQl"/>
+            <module name="Magento_Directory" />
+            <module name="Magento_Store" />
+            <module name="Magento_GraphQl" />
+            <module name="Magento_DirectoryGraphQl" />
         </sequence>
     </module>
 </config>
